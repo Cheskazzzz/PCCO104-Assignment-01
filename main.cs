@@ -59,9 +59,10 @@ class Program
       personality ="Jose Abad Santos, Vincent Lim, Josefa Llanes Escoda";
       }
 
-    return personality
+    return personality;
     }
   }
+
 
 
     
