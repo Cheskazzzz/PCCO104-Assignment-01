@@ -1,51 +1,64 @@
 using System;
 
-public class HelloWorld{
-    public static void Main(string[] args) {
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Enter the denomination of the Philippine Bank Note (Bills and Coins): ");
+        double denomination;
 
-        decimal bills = 1000;
-
-        switch (bills){
-            case 0.01m:
-                Console.WriteLine("No Person is Found");
-                break;
-            case 0.05m:
-                Console.WriteLine("No Person is Found");
-                break;
-            case 0.25m:
-                Console.WriteLine("No Person is Found");
-                break;
-            case 1:
-                Console.WriteLine("Jose Rizal");
-                break;
-            case 5:
-                Console.WriteLine("Emilio Aguinaldo");
-                break;
-            case 10:
-                Console.WriteLine("Andres Bonifacio, Apolinario Mabini");
-                break;
-            case 20:
-                Console.WriteLine("Manuel L. Quezon");
-                break;
-            case 50:
-                Console.WriteLine("Sergio Osmena");
-                break;
-            case 100:
-                Console.WriteLine("Manuel Roxas");
-                break;
-            case 200:
-                Console.WriteLine("Diosdado Macapagal");
-                break;
-            case 500:
-                Console.WriteLine("Benigno Sr. and Corazon Aquino");
-                break;
-            case 1000:
-                Console.WriteLine("Jose Abad Santos, Vicent Lim, Josefa Llanes Escoda");
-                break;
-            default:
-                Console.WriteLine("Invalid Denomination");
-                break;
+        if (double.TryParse(Console.ReadLine(), out denomination))
+        {
+            string personality = GetPersonality(denomination);
+            Console.WriteLine($"Personality found in {denomination}: {personality}");
+        }
+        else
+        {
+            Console.WriteLine($"Invalid Denomination: {Console.ReadLine()}");
         }
     }
-  }
 
+    static string GetPersonality(double denomination)
+    {
+        string personality = "No Person is found";
+
+        if (denomination == 1)
+        {
+            personality = "Jose Rizal";
+        }
+        else if (denomination == 5)
+        {
+            personality = "Emilio Aguinaldo";
+        }
+        else if (denomination == 10)
+        {
+            personality = "Andres Bonifacio, Apolinario Mabini";
+        }
+        else if (denomination == 20)
+        {
+            personality = "Manuel L. Quezon";
+        }
+        else if (denomination == 50)
+        {
+            personality = "Sergio Osmena";
+        }
+        else if (denomination == 100)
+        {
+            personality = "Manuel Roxas";
+        }
+        else if (denomination == 200)
+        {
+            personality = "Diosdado Macapagal";
+        }
+        else if (denomination == 500)
+        {
+            personality = "Benigno Sr. and Corazon Aquino";
+        }
+        else if (denomination == 1000)
+        {
+            personality = "Jose Abad Santos, Vicente Lim, Josefa Llanes Escoda";
+        }
+
+        return personality;
+    }
+}
