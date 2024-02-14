@@ -6,7 +6,6 @@ class Program
     {
         Console.WriteLine("Enter the denomination of the Philippine Bank Note (Bills and Coins): ");
         double denomination;
-
         if (double.TryParse(Console.ReadLine(), out denomination))
         {
             string personality = GetPersonality(denomination);
@@ -17,11 +16,9 @@ class Program
             Console.WriteLine($"Invalid Denomination: {Console.ReadLine()}");
         }
     }
-
     static string GetPersonality(double denomination)
     {
         string personality = "No Person is found";
-
         if (denomination == 1)
         {
             personality = "Jose Rizal";
@@ -61,5 +58,4 @@ class Program
 
         return personality;
     }
-}
-
+  }
